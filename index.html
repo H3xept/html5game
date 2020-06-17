@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
+            height: 100vh;
+        }
+        .hidden {
+            display: none;
+        }
+    </style>
+    <div class="container">
+        <div class="message" id="msg">Loading...</div>
+        <div class="hidden" id="credits">Evil concept by <a href="https://twitter.com/jndok?lang=en">jndok</a></div>
+    </div>
+    <script>
+        (() => {
+            const rip = (e,c) => () => { e.innerHTML = 'The game.'; c.style.display = 'block'; }
+            const e = document.getElementById('msg')
+            const c = document.getElementById('credits')
+            setTimeout(rip(e,c), 3 * 1000)
+        })()
+    </script>
+</body>
+</html>
